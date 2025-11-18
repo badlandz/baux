@@ -1,0 +1,12 @@
+# BAUX – Badlandz Auxiliary UniX
+set -o vi
+export EDITOR=nvim VISUAL=nvim
+
+# Gruvbox prompt (console + SSH safe)
+if [[ "$TERM" == "linux" ]]; then
+    PS1='\[\e[38;5;142m\]\u\[\e[38;5;108m\]@\h \[\e[38;5;180m\]\w \[\e[38;5;142m\]$ \[\e[0m\]'
+else
+    PS1='\[\e[38;5;142m\]\u\[\e[38;5;108m\]@\h \[\e[38;5;180m\]\w \[\e[38;5;142m\]$ \[\e[0m\]'
+fi
+
+alias ls='ls --color=auto' ll='ls -alF' grep='grep --color=auto'

@@ -1,0 +1,4 @@
+#!/bin/bash
+export BAUX_HOME="/usr/share/baux"
+[ -f "$BAUX_HOME/bauxrc" ] && . "$BAUX_HOME/bauxrc"
+exec tmux new-session -A -s baux
