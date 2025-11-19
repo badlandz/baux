@@ -1,0 +1,9 @@
+core/baux       usr/bin/
+core/bauxrc     usr/share/baux/
+nvim/init.lua   usr/share/baux/nvim/
+demo            usr/share/baux/demo
+legacy          usr/share/baux/legacy
+docs            usr/share/baux/docs
+forge           usr/share/baux/forge
+roxieos         usr/share/baux/roxieos
+test            usr/share/baux/test
