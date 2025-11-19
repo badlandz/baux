@@ -17,6 +17,13 @@ What's missing still:
 - The screen saver routines, to keep screen burn and auto kiosk mode stolen from stuff like hollywood
 - scripted rebuilds of the actual .deb that does all this, from within this... LOL
 
+SHORT TERM OBJECTIVES:
+- Automate the build of the debian package for baux:
+  - script the sync with the repo, merges, management of the code of baux itself
+  - script the build itself to dump the .deb where it should be in the repo:
+  NOTE: script (build box lua script tmux/neovim, global?) '''debuild -us -uc -b''' to output in '''$HOME/src/baux/packages/''' see: pct 901 baux-forge
+
+
 Everything below is ordered by **impact / joy / feasibility**.
 
 ## Phase 0 – “It Never Dies” (December 2025 – 2–4 weeks)
