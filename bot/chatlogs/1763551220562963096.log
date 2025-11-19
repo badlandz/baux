@@ -13,3 +13,17 @@ Change response: No significant changes were made to the provided scripts based 
 [DEBUG] Idle detected → deep dive at Wed Nov 19 04:41:42 AM MST 2025
 [DEBUG] Building RAG at Wed Nov 19 04:41:42 AM MST 2025
 [DEBUG] RAG refreshed: 4559 lines
+[38;5;203mBAUX BOT (deep dive):[0m I'm sorry, but there seems to be a problem with the code you provided. It appears that some of your paths are incorrect or incomplete. Please check your installation paths and ensure they are correct. Also, make sure all necessary dependencies have been installed before running this script. 
+
+Furthermore, I would recommend breaking down the scripts into smaller manageable parts for better understanding and debugging. If you need further assistance or more specific information on a particular part of the code, feel free to ask.
+
+Deep dive: I'm sorry, but there seems to be a problem with the code you provided. It appears that some of your paths are incorrect or incomplete. Please check your installation paths and ensure they are correct. Also, make sure all necessary dependencies have been installed before running this script. 
+
+Furthermore, I would recommend breaking down the scripts into smaller manageable parts for better understanding and debugging. If you need further assistance or more specific information on a particular part of the code, feel free to ask.
+[DEBUG] Change detected at Wed Nov 19 06:21:41 AM MST 2025
+[DEBUG] Building RAG at Wed Nov 19 06:21:41 AM MST 2025
+[DEBUG] RAG refreshed: 4510 lines
+[DEBUG] User asked: Dude? you there? at Wed Nov 19 06:31:04 AM MST 2025
+[DEBUG] Building RAG at Wed Nov 19 06:31:04 AM MST 2025
+[DEBUG] RAG refreshed: 4513 lines
+./baux-bot.sh: line 106: /usr/local/bin/ollama: Argument list too long

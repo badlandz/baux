@@ -1,0 +1,28 @@
+[06:43:58] BAUX BOT v4 online — using deepseek-coder:33b — logging to /home/coyote/src/baux/bot/chatlogs
+[06:43:59] RAG loaded (~1073 lines)
+[06:43:59] Change detected — refreshing RAG
+[06:48:03] BAUX BOT v4.1 online — using deepseek-coder:33b — logging to /home/coyote/src/baux/bot/chatlogs
+[06:48:03] Initial RAG built (~1008 lines)
+[06:48:03] Repo changed – refreshing RAG
+[07:00:46] BAUX BOT v4.1 online — using llama3.2b — logging to /home/coyote/src/baux/bot/chatlogs
+[07:00:46] Initial RAG built (~1009 lines)
+[07:00:46] Repo changed – refreshing RAG
+[07:00:51] User: are you there?
+[07:00:52] Repo changed – refreshing RAG
+[07:01:06] User: Hi, Are you there?
+[07:01:06] Repo changed – refreshing RAG
+[07:01:22] User: read the README.md
+[07:01:23] Repo changed – refreshing RAG
+[07:03:11] User: quit
+[07:03:17] Repo changed – refreshing RAG
+[07:03:19] User: exit
+[07:03:20] Repo changed – refreshing RAG
+[07:03:21] BAUX BOT offline – see you space cowboy
+[07:04:55] BAUX BOT v4.1 online — using smollm2:135m — logging to /home/coyote/src/baux/bot/chatlogs
+[07:04:55] Initial RAG built (~1010 lines)
+[07:04:55] Repo changed – refreshing RAG
+[07:06:26] User: test hello
+[07:07:39] Repo changed – refreshing RAG
+[07:15:17] User: can you view the README.md and docs/ROADMAP.md in this project and summarize them, and if you can't access find the documents, state you can not access so you can not summarize?
+[07:16:22] Repo changed – refreshing RAG
+[07:26:26] BAUX BOT offline – see you space cowboy
