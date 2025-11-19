@@ -1,0 +1,12 @@
+Package: baux
+Version: 0.2.0
+Architecture: all
+Maintainer: badlandz <badlandz@example.com>
+Installed-Size: 31190
+Depends: tmux, neovim, bashtop
+Section: utils
+Priority: optional
+Homepage: https://github.com/badlandz/baux
+Description: Badlandz Auxiliary UniX - distributed terminal IDE
+ BAUX replaces the shell with a persistent, host-aware tmux+Neovim IDE
+ for embedded electronics development.

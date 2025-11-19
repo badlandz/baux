@@ -7,3 +7,9 @@ docs            usr/share/baux/docs
 forge           usr/share/baux/forge
 roxieos         usr/share/baux/roxieos
 test            usr/share/baux/test
+test            usr/share/baux/test
+forge           usr/share/baux/forge
+roxieos         usr/share/baux/roxieos
+docs            usr/share/baux/docs
+legacy          usr/share/baux/legacy
+demo            usr/share/baux/demo

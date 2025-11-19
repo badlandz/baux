@@ -1,0 +1,15 @@
+./core/baux
+./core/bauxrc
+./nvim/init.lua
+./demo
+./legacy
+./docs
+./forge
+./roxieos
+./test
+./test
+./forge
+./roxieos
+./docs
+./legacy
+./demo
