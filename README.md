@@ -4,6 +4,7 @@
 ***WARNING***
  BAUX is meant for dedicated hardware. It will break your existing system and overwrite required critical data.
  BAUX itself is not yet stable, and a work in progress. HIGH RISK damage to data and hardware is not only possible, but likely at this state.
+ Mind blower? To run you must install BAUX on two systems (hardware or virtual), dedicated, running RoxieOS or it won't really even make sense enough to learn it. At least test it in a container, don't install it on anything you care about. It's "just a configuration script, that thinks it's an OS" but it will nuke your existing OS, sometimes, randomly.
 
 **BAUX** is a next-generation, terminal-native development environment designed for **embedded systems**, **remote hardware debugging**, and **multi-host SSH workflows**—built to run smoothly even on a **Raspberry Pi Zero**.
 
@@ -118,6 +119,8 @@ BAUX is the heart of the system.
 
 ## RoxieOS  
 ### Micro-Debian Distribution Optimized for BAUX
+
+Think of RoxieOS as a "highly opinionated" distro like Raspberry Pi OS or Armbian. Once you get it installed, go nuts if you want and install full blown KDE, our own tight bauxwm (dwm derivative to come later), or gnome, whatever you want. Just, remember, your "default shell" is going to be baux, not bash.
 
 RoxieOS is a **Debian Trixie derivative** engineered for:
 
