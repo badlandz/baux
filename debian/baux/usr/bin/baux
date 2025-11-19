@@ -2,4 +2,5 @@
 export BAUX_HOME="/usr/share/baux"
 export NVIM_INIT="$BAUX_HOME/nvim/init.lua"
 TMUX_CONF="$BAUX_HOME/tmux/baux.conf"
-exec tmux -f "$TMUX_CONF" new-session -A -s "baux-#H"
+SESSION="baux-$(hostname)"
+exec tmux -f "$TMUX_CONF" new-session -A -s "$SESSION"

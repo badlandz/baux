@@ -2,7 +2,7 @@
 set -e
 mkdir -p /etc/baux
 [ -f /etc/baux/tmux.local.conf ] || cat > /etc/baux/tmux.local.conf <<'LOCAL'
-# BAUX user-local tmux overrides — safe to edit
-# This file is sourced last by /usr/share/baux/tmux/baux.conf
+# BAUX user-local tmux overrides — add custom binds here
+# Example: bind-key -n M-q detach-client
 LOCAL
 exit 0

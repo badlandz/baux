@@ -13,5 +13,6 @@ docs            usr/share/baux/docs
 legacy          usr/share/baux/legacy
 demo            usr/share/baux/demo
 core/baux            /usr/bin/
-core/tmux/baux.conf       /usr/share/baux/tmux/
 core/baux                 /usr/bin/
+core/tmux/baux.conf    /usr/share/baux/tmux/
+core/baux              /usr/bin/

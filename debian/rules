@@ -5,6 +5,5 @@
 override_dh_auto_install:
 	dh_auto_install -- prefix=/usr
 	install -D -m 0755 core/baux $(CURDIR)/debian/baux/usr/bin/baux
-	install -D -m 0644 core/bauxrc $(CURDIR)/debian/baux/usr/share/baux/bauxrc
 	mkdir -p $(CURDIR)/debian/baux/usr/share/baux/nvim
 	install -m 0644 nvim/init.lua $(CURDIR)/debian/baux/usr/share/baux/nvim/init.lua

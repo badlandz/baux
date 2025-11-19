@@ -13,5 +13,6 @@
 ./legacy
 ./demo
 ./core/baux
+./core/baux
 ./core/tmux/baux.conf
 ./core/baux
