@@ -16,7 +16,7 @@ What's missing still:
      I have worked out a plan, need to implement, "connection" is not localhost, or tmux running "detach" remote tmux before opening ssh session... etc...
 - The screen saver routines, to keep screen burn and auto kiosk mode stolen from stuff like hollywood
 - scripted rebuilds of the actual .deb that does all this, from within this... LOL
-
+- The bot doesn't install automajically! which ... okay, bloatware postpone, it'll where when we hack it.
 SHORT TERM OBJECTIVES:
 - Automate the build of the debian package for baux:
   - script the sync with the repo, merges, management of the code of baux itself
