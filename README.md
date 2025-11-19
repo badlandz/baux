@@ -1,6 +1,10 @@
 # BAUX • CoyoteUI • RoxieOS  
 ### Terminal-Native Distributed Development Environment for Embedded Systems
 
+***WARNING***
+ BAUX is meant for dedicated hardware. It will break your existing system and overwrite required critical data.
+ BAUX itself is not yet stable, and a work in progress. HIGH RISK damage to data and hardware is not only possible, but likely at this state.
+
 **BAUX** is a next-generation, terminal-native development environment designed for **embedded systems**, **remote hardware debugging**, and **multi-host SSH workflows**—built to run smoothly even on a **Raspberry Pi Zero**.
 
 It provides a **persistent, distributed, session-aware interface** that merges:
@@ -25,6 +29,8 @@ Together, they form a cohesive ecosystem for hardware-focused developers.
 A tighter definition:
 
 > **BAUX is a host-aware, persistent, auto-reconnecting, Neovim-powered shell environment built on top of tmux, designed to orchestrate development workflows across many devices simultaneously.**
+
+Think of BAUX as a highly opinionated session multiplexer, a "meta-OS for terminal life," a "non-X, non-Wayland" way of life, "the Omarchy of life in a shell."
 
 The emphasis is on **distributed session management**:
 
