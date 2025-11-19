@@ -122,6 +122,8 @@ BAUX is the heart of the system.
 
 Think of RoxieOS as a "highly opinionated" mini debian distro, but in a similar category to Raspberry Pi OS or Armbian. Once you get it installed, go nuts if you want and install full blown KDE, our own tight bauxwm (dwm derivative to come later), or gnome, whatever you want. Just, remember, your "default shell" is going to be baux, not bash.
 
+***WARNING*** This is a ***VERY*** opinionated distribution, it is designed to "spin it up in a container, or install it on bare metal, to hack code easily as possible, PERIOD. That means something very, very, very scary for some people. YOU ARE ROOT AT ALL TIMES FOR EVERYTHING BY DEFAULT. If you want to set up "guard rails" by adding a user with or without sudo powers, that's up to you. That's not why this exists, it's not to set up users and replace microsoft word, and if it did, you would be in neovim hacking LaTeX, NOT in microsoft word. You ARE root, get over it, own your mistakes, keep backups.
+
 RoxieOS is a **Debian Trixie derivative** engineered for:
 
 - Raspberry Pi Zero compatibility:
