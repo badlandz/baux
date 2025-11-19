@@ -1,4 +1,14 @@
 #!/bin/bash
+# BAUX entrypoint – v0.2.1 fix
 export BAUX_HOME="/usr/share/baux"
-[ -f "$BAUX_HOME/bauxrc" ] && . "$BAUX_HOME/bauxrc"
-exec tmux new-session -A -s baux
+
+# This is a tmux.conf, NOT a shell script → do NOT source it
+# Just pass it directly to tmux with -f
+
+TMUX_CONF="$BAUX_HOME/bauxrc"
+
+# Optional: make Neovim use our init.lua
+export NVIM_INIT="$BAUX_HOME/nvim/init.lua"
+
+# Start or attach to the persistent session
+exec tmux -f "$TMUX_CONF" new-session -A -s baux

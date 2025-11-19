@@ -1,8 +1,8 @@
 Source: baux
 Section: utils
 Priority: optional
-Maintainer: badlandz <badlandz@example.com>
-Build-Depends: debhelper (>= 11)
+Maintainer: badlandz <robert.current@gmail.com>
+Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.0
 Homepage: https://github.com/badlandz/baux
 
