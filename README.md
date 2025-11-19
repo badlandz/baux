@@ -120,7 +120,7 @@ BAUX is the heart of the system.
 ## RoxieOS  
 ### Micro-Debian Distribution Optimized for BAUX
 
-Think of RoxieOS as a "highly opinionated" distro like Raspberry Pi OS or Armbian. Once you get it installed, go nuts if you want and install full blown KDE, our own tight bauxwm (dwm derivative to come later), or gnome, whatever you want. Just, remember, your "default shell" is going to be baux, not bash.
+Think of RoxieOS as a "highly opinionated" mini debian distro, but in a similar category to Raspberry Pi OS or Armbian. Once you get it installed, go nuts if you want and install full blown KDE, our own tight bauxwm (dwm derivative to come later), or gnome, whatever you want. Just, remember, your "default shell" is going to be baux, not bash.
 
 RoxieOS is a **Debian Trixie derivative** engineered for:
 
