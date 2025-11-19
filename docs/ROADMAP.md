@@ -8,6 +8,15 @@ What we now know is real:
     - run '''echo "baux" >> .bashrc''' and set autologin console in rappi-config
 - We finally have momentum.
 
+What's missing still:
+- true "stay alive" ssh/sql sessions with servers in panes:
+  = there are "standards" to be droped into place for the config
+- hostname layout distinction, and conflict resolution (don't run baux in baux, if ssh then test "already in baux"
+   NOTE:
+     I have worked out a plan, need to implement, "connection" is not localhost, or tmux running "detach" remote tmux before opening ssh session... etc...
+- The screen saver routines, to keep screen burn and auto kiosk mode stolen from stuff like hollywood
+- scripted rebuilds of the actual .deb that does all this, from within this... LOL
+
 Everything below is ordered by **impact / joy / feasibility**.
 
 ## Phase 0 – “It Never Dies” (December 2025 – 2–4 weeks)

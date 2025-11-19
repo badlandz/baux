@@ -1,4 +1,4 @@
-# BAUX • CoyoteUI • RoxieOS  
+# BAUX • RoxieOS  
 ### Terminal-Native Distributed Development Environment for Embedded Systems
 
 ***WARNING***
@@ -15,7 +15,6 @@ It provides a **persistent, distributed, session-aware interface** that merges:
 
 …into a unified environment that behaves like a **terminal-based distributed operating system**.
 
-**CoyoteUI** is the “full-bling” reference configuration.  
 **RoxieOS** is a micro-Debian distribution optimized for BAUX.
 
 Together, they form a cohesive ecosystem for hardware-focused developers.
@@ -117,18 +116,6 @@ BAUX is the heart of the system.
 
 ---
 
-## CoyoteUI  
-### Full-Bling Reference Configuration (Prototype)
-
-CoyoteUI is:
-- the experimental design sandbox
-- the “everything included” plugin set
-- visually rich, feature-heavy, not Pi Zero friendly
-
-It guides BAUX feature direction, but is *not* the minimal deployment target.
-
----
-
 ## RoxieOS  
 ### Micro-Debian Distribution Optimized for BAUX
 
@@ -188,7 +175,7 @@ Before RoxieOS is ready, BAUX should install on:
 - PlatformIO integration  
 - DAP debugging  
 - Arduino Language Server  
-- Full CoyoteUI visual enhancements  
+- Full CoyoteUI inspired visual enhancements  
 - SD card imaging UI  
 - RoxieOS image builder  
 
@@ -311,10 +298,11 @@ No existing tool integrates *all* of these into a low-resource distributed workf
 - Minimal Debian derivative  
 - Package repository  
 
-### **0.4 — CoyoteUI Integration**
+### **0.4 — Features Inspired by CoyoteUI Full Integration**
 - Full custom UI/UX  
 - Heavy plugins + visuals  
 - Not Pi Zero compatible  
+- Menu Optional Components: eg, text-only themed/keybinding matching text only web browser
 
 ### **1.0 — Distributed IDE**
 - Multi-host orchestration  
@@ -342,7 +330,7 @@ We welcome help with:
 - **BAUX**  
   - “bash + UI”  
   - “Badlands Alternative UniX”  
-- **CoyoteUI**  
+- **CoyoteUI**  (phasing out, this replaces that project)
   - the original messy, brilliant prototype  
 - **RoxieOS**  
   - lean, lightweight, dependable  
