@@ -94,7 +94,7 @@ Containers and Debian packages ensure identical environments everywhere.
 
 # 3. The BAUX Ecosystem
 
-There are **three tightly-related projects**:
+There are **two tightly-related projects**:
 
 ---
 
@@ -121,7 +121,10 @@ BAUX is the heart of the system.
 
 RoxieOS is a **Debian Trixie derivative** engineered for:
 
-- Raspberry Pi Zero compatibility  
+- Raspberry Pi Zero compatibility:
+  - Full heart of cyberdeck, OR
+  - headless, OR 
+  - "only a head" (no keyboard/mouse)
 - terminal-only operation (no X11, no Wayland)  
 - ultra-minimal default footprint  
 - reproducible builds (containers 901/902)  
@@ -281,7 +284,7 @@ No existing tool integrates *all* of these into a low-resource distributed workf
 
 - **BAUX**  
   - “bash + UI”  
-  - “Badlands Alternative UniX”  
+  - “Badlandx Alternative UniX”  
 - **CoyoteUI**  (phasing out, this replaces that project)
   - the original messy, brilliant prototype  
 - **RoxieOS**  
