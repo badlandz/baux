@@ -2,7 +2,7 @@ Package: baux
 Version: 0.2.0
 Architecture: all
 Maintainer: badlandz <robert.current@gmail.com>
-Installed-Size: 31192
+Installed-Size: 31195
 Depends: tmux, neovim, bashtop
 Section: utils
 Priority: optional

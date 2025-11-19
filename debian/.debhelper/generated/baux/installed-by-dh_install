@@ -1,5 +1,4 @@
 ./core/baux
-./core/bauxrc
 ./nvim/init.lua
 ./demo
 ./legacy
@@ -13,3 +12,6 @@
 ./docs
 ./legacy
 ./demo
+./core/baux
+./core/tmux/baux.conf
+./core/baux

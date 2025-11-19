@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+mkdir -p /etc/baux
+[ -f /etc/baux/tmux.local.conf ] || cat > /etc/baux/tmux.local.conf <<'LOCAL'
+# BAUX user-local tmux overrides — safe to edit
+# This file is sourced last by /usr/share/baux/tmux/baux.conf
+LOCAL
+exit 0

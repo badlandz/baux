@@ -1,5 +1,4 @@
 core/baux       usr/bin/
-core/bauxrc     usr/share/baux/
 nvim/init.lua   usr/share/baux/nvim/
 demo            usr/share/baux/demo
 legacy          usr/share/baux/legacy
@@ -13,3 +12,6 @@ roxieos         usr/share/baux/roxieos
 docs            usr/share/baux/docs
 legacy          usr/share/baux/legacy
 demo            usr/share/baux/demo
+core/baux            /usr/bin/
+core/tmux/baux.conf       /usr/share/baux/tmux/
+core/baux                 /usr/bin/
