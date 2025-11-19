@@ -1,4 +1,4 @@
-4eddc89f0238bb82483050cb54598c10  usr/bin/baux
+98a2646b5828f1b91f12cb823e8d9608  usr/bin/baux
 3abfb1ef2f5ad146c53fae6c29c74760  usr/share/baux/bauxrc
 d41d8cd98f00b204e9800998ecf8427e  usr/share/baux/demo/demo/electronics/.gitkeep
 346adc0d88420c7506d22ed92b696239  usr/share/baux/demo/demo/electronics/README.md
@@ -682,6 +682,6 @@ ef50acba1961a76c269b120ddb9713dc  usr/share/baux/roxieos/roxieos/legacy-ui/theme
 f1414bc523f9532b2ba1b7cff71eb576  usr/share/baux/roxieos/roxieos/os-release
 d41d8cd98f00b204e9800998ecf8427e  usr/share/baux/test/test/.gitkeep
 d41d8cd98f00b204e9800998ecf8427e  usr/share/baux/test/test/test
-7ad52524319ed78ddb432574c666e062  usr/share/baux/tmux/baux.conf
+6a0e1d569e76b35a353d6aa6fe2f53dc  usr/share/baux/tmux/baux.conf
 586fa1ced5d279fc9e80eadf257c329f  usr/share/doc/baux/changelog.gz
 8970378d9c87f582ae0b94dbeea4a81a  usr/share/doc/baux/copyright
