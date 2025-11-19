@@ -1,6 +1,20 @@
 # BAUX • RoxieOS  
 ### Terminal-Native Distributed Development Environment for Embedded Systems
 
+### Live Status (2025-11-19)
+- ✅ Core tmux + Neovim + auto-reconnect loop working
+- ✅ Core tmux + Neovim + auto-reconnect on Raspberry Pi Zero W
+- ✅ baux-bot v4 running deepseek-coder:33b on remote Ryzen host
+- ✅ Real-time RAG refresh on every git push
+- 🔧 Building next .deb from inside baux-bot session right now with scripts
+- 🔧 Host/client role detection → landing soon?  next .deb (week?)
+- 🔜 HOST specific "session" auto-reconnect SSH/SQL/TTY-USB whatever automagic
+- 🔜 leader-B hotkey + systemd auto-start
+- 🔜 RoxieOS container builds reproducible
+
+![Screenshot 01](bauxshots/2025-11-19_02-32.png)    ![Screenshot 02](bauxshots/2025-11-19_02-43.png)
+![Screenshot 03](bauxshots/2025-11-19_03-56.png)    ![Screenshot 04](bauxshots/2025-11-19_04-07.png)
+
 ***WARNING***
  BAUX is meant for dedicated hardware. It will break your existing system and overwrite required critical data.
  BAUX itself is not yet stable, and a work in progress. HIGH RISK damage to data and hardware is not only possible, but likely at this state.
