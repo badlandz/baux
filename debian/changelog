@@ -1,3 +1,10 @@
+baux (0.2.1) UNRELEASED; urgency=medium
+
+  * Roxanne Edition — resurrection works, red dead panes, hostname
+    fixed, starship system-wide, unixporn ready
+
+ -- root <root@roxie-builder.current.law>  Thu, 20 Nov 2025 17:36:18 +0000
+
 baux (0.2.0) unstable; urgency=medium
 
   * Proper Debian packaging
