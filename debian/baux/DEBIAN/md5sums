@@ -21,7 +21,7 @@ f1414bc523f9532b2ba1b7cff71eb576  usr/share/baux/roxieos/os-release
 d41d8cd98f00b204e9800998ecf8427e  usr/share/baux/test/.gitkeep
 d41d8cd98f00b204e9800998ecf8427e  usr/share/baux/test/test
 066b332a738b74f640b2aae5a3f3dd24  usr/share/baux/tmux/DEPRECIATED-bauxconf
-7d12f83dbf9f0a1d9a82772b24744600  usr/share/baux/tmux/baux.conf
+054fa41f5596e5863f4ad17b8df7fe5d  usr/share/baux/tmux/baux.conf
 3d239e2d1bef9ff77f24029e55100ddd  usr/share/baux/tmux/bling.conf
 81c1cde1f7f644ea67459598a5fdca43  usr/share/baux/tmux/core.conf
 4cf2d64e44205fe628ddd534e1151b58  usr/share/baux/tmux/plugins/continuum/.git/HEAD
