@@ -1,9 +1,21 @@
 #!/usr/bin/make -f
+# debian/rules — BAUX v0.3.0 — bulletproof, no more tears
+
 %:
 	dh $@
 
 override_dh_auto_install:
-	dh_auto_install -- prefix=/usr
-	install -D -m 0755 core/baux $(CURDIR)/debian/baux/usr/bin/baux
-	mkdir -p $(CURDIR)/debian/baux/usr/share/baux/nvim
-	install -m 0644 nvim/init.lua $(CURDIR)/debian/baux/usr/share/baux/nvim/init.lua
+	# Create the target tree first (this is what was missing!)
+	mkdir -p $(CURDIR)/debian/baux/usr/bin
+	mkdir -p $(CURDIR)/debian/baux/usr/share/baux
+	mkdir -p $(CURDIR)/debian/baux/usr/share/tmux-plugins
+
+	# 1. Main binary
+	install -m 0755 core/baux $(CURDIR)/  $(CURDIR)/debian/baux/usr/bin/baux
+
+	# 2. All data dirs — recursive copy
+	cp -r nvim demo docs forge legacy roxieos test core/tmux $(CURDIR)/debian/baux/usr/share/baux/
+
+	# 3. tmux-resurrect + continuum (pre-installed for speed)
+	git clone -q https://github.com/tmux-plugins/tmux-resurrect $(CURDIR)/debian/baux/usr/share/tmux-plugins/resurrect || true
+	git clone -q https://github.com/tmux-plugins/tmux-continuum $(CURDIR)/debian/baux/usr/share/tmux-plugins/continuum || true

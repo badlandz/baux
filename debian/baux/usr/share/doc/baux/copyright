@@ -1,7 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: baux
-Source: https://github.com/badlandz/baux
-
-Files: *
-Copyright: 2025 badlandz
-License: BSD 1-Clause

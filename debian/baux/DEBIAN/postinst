@@ -1,7 +1,0 @@
-#!/bin/sh
-set -e
-mkdir -p /usr/share/baux
-chown root:root /usr/share/baux
-chmod 755 /usr/share/baux
-[ -f /usr/share/baux/bauxrc ] && chmod 644 /usr/share/baux/bauxrc
-exit 0
