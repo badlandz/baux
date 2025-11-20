@@ -10,3 +10,4 @@
 ./core/tmux/plugins/resurrect
 ./core/tmux/plugins/continuum
 ./core/tmux/plugins/tpm
+./etc/starship/site.toml

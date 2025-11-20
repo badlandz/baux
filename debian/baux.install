@@ -11,3 +11,4 @@ core/tmux/plugins/resurrect usr/share/tmux-plugins/
 core/tmux/plugins/continuum usr/share/tmux-plugins/
 # TPM — required for system-wide plugins
 core/tmux/plugins/tpm usr/share/tmux-plugins/tpm
+etc/starship/site.toml usr/share/starship/

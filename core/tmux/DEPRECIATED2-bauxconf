@@ -1,5 +1,6 @@
-# Roxanne Cyberdeck tmux — Immortal + Unixporn Edition v0.2.1
+# BAUX tmux config v0.3.0 — Immortal Edition (FINAL)
 # Prefix: C-Space
+
 set -g history-limit 50000
 set -g mouse on
 set -g base-index 1
@@ -17,7 +18,7 @@ set -g prefix C-Space
 unbind C-b
 bind C-Space send-prefix
 
-# Your perfect keybinds
+# Your perfect keybinds (unchanged)
 bind -n M-h select-pane -L
 bind -n M-j select-pane -D
 bind -n M-k select-pane -U
@@ -33,38 +34,38 @@ bind - split-window -v -c "#{pane_current_path}"
 bind c new-window -c "#{pane_current_path}"
 bind , command-prompt -I "#W" "rename-window '%%'"
 bind . command-prompt -I "#S" "rename-session '%%'"
-bind r source-file "$BAUX_HOME/tmux/baux.conf" \; display "Roxanne reloaded!"
+bind r source-file "$BAUX_HOME/tmux/baux.conf" \; display "BAUX reloaded!"
 
-# IMMORTAL SSH PANES
+# ────────────────────── IMMORTAL SSH PANES (this is the holy grail) ──────────────────────
 set -g remain-on-exit on
-set -g remain-on-exit failed
+set -g remain-on-exit failed          # only keep crashed panes (clean SSH panes vanish)
 set -g pane-border-status top
-set -g pane-border-format "#[fg=red,bold] #P: #{pane_current_command} #{?pane_dead, ← DEAD →, #[fg=green]LIVE#[default]} "
+set -g pane-border-format "#[fg=red,bold] #P: #{pane_current_command} #{?pane_dead, ← DEAD →, #[fg=green]OK#[default]} "
 
-# TPM + resurrect + continuum
+# ────────────────────── TPM + resurrect + continuum (system-wide) ──────────────────────
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 
 set -g @resurrect-dir '/var/tmp/baux-resurrect/$(hostname -s)'
 set -g @resurrect-capture-pane-contents 'on'
-set -g @resurrect-processes 'ssh mosh psql mysql serial~* "*baux*"'
+set -g @resurrect-processes 'ssh mosh psql mysql serial~* "~baux-bot.sh"'
 
 set -g @continuum-restore 'on'
 set -g @continuum-save-interval '5'
 
+# TPM must be initialized at the VERY END
 run '/usr/share/tmux/plugins/tpm/tpm'
 
-# Roxanne status bar — RED ROOT, GREEN TIME, BLUE PATH, HOSTNAME FIXED
-set -g status-left "#[fg=#1e1e2e,bg=#f38ba8,bold] ROXANNE #[fg=#f38ba8,bg=#1e1e2e] on #[fg=#89b4fa,bold]#H #[default]"
+# ────────────────────── Status bar (your bling) ──────────────────────
+set -g status-left "#[fg=#1e1e2e,bg=#89b4fa,bold] BAUX #[fg=#89b4fa,bg=#1e1e2e] on #H #[default]"
 set -g status-right "#[fg=yellow]#{?client_prefix,PREFIX ,}#[fg=#a6e3a1]%a %H:%M"
 set -g status-center "#[fg=#f9e2af,bold]#{b:pane_current_path}#[default]"
 set -g status-style bg=#1e1e2e,fg=#cdd6f4
-setw -g window-status-current-style bg=#f38ba8,fg=#1e1e2e,bold
+setw -g window-status-current-style bg=#89b4fa,fg=#1e1e2e,bold
+setw -g window-status-format " #I:#W "
+setw -g window-status-current-format " #I:#W "
 
 # User overrides
 if-shell '[ -f /etc/baux/tmux.local.conf ]' 'source-file /etc/baux/tmux.local.conf'
-
-# Enter respawns dead panes
-bind-key Enter respawn-pane -k \; display "Reconnecting dead pane..."
-
+bind-key Enter respawn-pane -k \; display 'Reconnecting...'
