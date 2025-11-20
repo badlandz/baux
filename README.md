@@ -12,7 +12,7 @@
 - 🔜 leader-B hotkey + systemd auto-start
 - 🔜 RoxieOS container builds reproducible
 
-![Screenshot 01](bauxshots/2025-11-20_14-43.png)    ![Screenshot 02](bauxshots/2025-11-20_40_57.png)
+![Screenshot 01](bauxshots/2025-11-20_14-43.png)    ![Screenshot 02](bauxshots/2025-11-20_21_40_57.png)
 ![Screenshot 03](bauxshots/2025-11-19_02-32.png)    ![Screenshot 04](bauxshots/2025-11-19_03-56.png)
 
 ***WARNING***
