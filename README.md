@@ -5,10 +5,10 @@
 - ✅ Core tmux + Neovim + auto-reconnect loop working
 - ✅ Core tmux + Neovim + auto-reconnect on Raspberry Pi Zero W
 - ✅ baux-bot v4 running deepseek-coder:33b on remote Ryzen host
-- ✅ Real-time RAG refresh on every git push
+- ✅ Real-time RAG refresh on every git push for bot
+- ✅ Host/client role detection → nesting tmux issue fixed?
 - 🔧 Building next .deb from inside baux-bot session right now with scripts
-- 🔧 Host/client role detection → landing soon?  next .deb (week?)
-- 🔜 HOST specific "session" auto-reconnect SSH/SQL/TTY-USB whatever automagic
+- 🔧 HOST specific "session" auto-reconnect SSH/SQL/TTY-USB whatever automagic
 - 🔜 leader-B hotkey + systemd auto-start
 - 🔜 RoxieOS container builds reproducible
 
