@@ -1,7 +1,28 @@
 #!/bin/sh
 set -e
-mkdir -p /usr/share/baux
-chown root:root /usr/share/baux
-chmod 755 /usr/share/baux
-[ -f /usr/share/baux/bauxrc ] && chmod 644 /usr/share/baux/bauxrc
+
+# Create required dirs
+mkdir -p /usr/share/baux /usr/share/tmux-plugins /var/tmp/baux-resurrect /etc/baux
+
+# Clone/update resurrect + continuum (idempotent)
+for repo in resurrect continuum; do
+  if [ ! -d "/usr/share/tmux-plugins/tmux-$repo" ]; then
+    git clone -q "https://github.com/tmux-plugins/tmux-$repo" "/usr/share/tmux-plugins/tmux-$repo"
+  else
+    git -C "/usr/share/tmux-plugins/tmux-$repo" pull -q || true
+  fi
+done
+
+# Host-specific resurrect dir (pre-create so no race on first save)
+mkdir -p "/var/tmp/baux-resurrect/$(hostname -s)"
+
+# User-local override file
+if [ ! -f /etc/baux/tmux.local.conf ]; then
+  cat >/etc/baux/tmux.local.conf <<'EOF'
+# BAUX user-local tmux overrides — safe to edit
+# Example: bind-key -n M-q detach-client
+EOF
+fi
+
+echo "BAUX postinst complete — resurrect/continuum ready"
 exit 0

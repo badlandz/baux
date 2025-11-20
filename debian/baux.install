@@ -1,18 +1,20 @@
-core/baux       usr/bin/
-nvim/init.lua   usr/share/baux/nvim/
-demo            usr/share/baux/demo
-legacy          usr/share/baux/legacy
-docs            usr/share/baux/docs
-forge           usr/share/baux/forge
-roxieos         usr/share/baux/roxieos
-test            usr/share/baux/test
-test            usr/share/baux/test
-forge           usr/share/baux/forge
-roxieos         usr/share/baux/roxieos
-docs            usr/share/baux/docs
-legacy          usr/share/baux/legacy
-demo            usr/share/baux/demo
-core/baux            /usr/bin/
-core/baux                 /usr/bin/
-core/tmux/baux.conf    /usr/share/baux/tmux/
-core/baux              /usr/bin/
+# Install core binaries and data
+core/baux usr/bin/baux
+
+# Core data
+usr/share/baux/nvim/init.lua usr/share/baux/nvim/
+usr/share/baux/tmux/baux.conf usr/share/baux/tmux/
+usr/share/baux/tmux/bling.conf usr/share/baux/tmux/
+usr/share/baux/tmux/core.conf usr/share/baux/tmux/
+
+# Demo / docs / legacy / forge / roxieos / test
+usr/share/baux/demo
+usr/share/baux/docs
+usr/share/baux/forge
+usr/share/baux/legacy
+usr/share/baux/roxieos
+usr/share/baux/test
+
+# tmux-resurrect + continuum (immortality plugins)
+usr/share/tmux-plugins/resurrect
+usr/share/tmux-plugins/continuum

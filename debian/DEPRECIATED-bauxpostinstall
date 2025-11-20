@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+mkdir -p /usr/share/baux
+chown root:root /usr/share/baux
+chmod 755 /usr/share/baux
+mkdir -p /usr/share/tmux-plugins
+git clone https://github.com/tmux-plugins/tmux-resurrect /usr/share/tmux-plugins/resurrect || true
+git clone https://github.com/tmux-plugins/tmux-continuum /usr/share/tmux-plugins/continuum || true
+[ -f /usr/share/baux/bauxrc ] && chmod 644 /usr/share/baux/bauxrc
+exit 0
