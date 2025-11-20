@@ -1,7 +1,5 @@
 ./core/baux
 ./core/tmux/baux.conf
-./core/tmux/bling.conf
-./core/tmux/core.conf
 ./nvim/init.lua
 ./demo
 ./docs
@@ -11,3 +9,4 @@
 ./test
 ./core/tmux/plugins/resurrect
 ./core/tmux/plugins/continuum
+./core/tmux/plugins/tpm

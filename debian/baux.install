@@ -1,7 +1,5 @@
 core/baux usr/bin/
 core/tmux/baux.conf usr/share/baux/tmux/
-core/tmux/bling.conf usr/share/baux/tmux/
-core/tmux/core.conf usr/share/baux/tmux/
 nvim/init.lua usr/share/baux/nvim/
 demo usr/share/baux/
 docs usr/share/baux/
@@ -11,3 +9,5 @@ roxieos usr/share/baux/
 test usr/share/baux/
 core/tmux/plugins/resurrect usr/share/tmux-plugins/
 core/tmux/plugins/continuum usr/share/tmux-plugins/
+# TPM — required for system-wide plugins
+core/tmux/plugins/tpm usr/share/tmux-plugins/tpm
