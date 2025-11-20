@@ -1,9 +1,9 @@
-ca0503a9af95d2cbdad255fbb5584f8a  usr/bin/baux
+ec30d80efd5f8dd28c49b2486c5f0b13  usr/bin/baux
 d41d8cd98f00b204e9800998ecf8427e  usr/share/baux/demo/demo/electronics/.gitkeep
 346adc0d88420c7506d22ed92b696239  usr/share/baux/demo/demo/electronics/README.md
 0bad0e369b7b73696db10623d0833670  usr/share/baux/docs/docs/README.md
 c9ec2ecf69b6a9da94b7aa79e3e9c05d  usr/share/baux/docs/docs/REPOS.md
-e2707f691bded87d746c65859aca9c52  usr/share/baux/docs/docs/ROADMAP.md
+0a9da3e83eb9109a59948918a7558531  usr/share/baux/docs/docs/ROADMAP.md
 d41d8cd98f00b204e9800998ecf8427e  usr/share/baux/forge/forge/.gitkeep
 245c5323f6a5fe6c247d6f245d10c359  usr/share/baux/forge/forge/Makefile
 d41d8cd98f00b204e9800998ecf8427e  usr/share/baux/legacy/legacy/bashrc/.gitkeep
