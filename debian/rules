@@ -1,21 +1,24 @@
 #!/usr/bin/make -f
-# debian/rules — BAUX v0.3.0 — bulletproof, no more tears
+# debian/rules — BAUX packaging with full logging and local plugins
+
+DH_VERBOSE = 1
 
 %:
 	dh $@
 
 override_dh_auto_install:
-	# Create the target tree first (this is what was missing!)
-	mkdir -p $(CURDIR)/debian/baux/usr/bin
-	mkdir -p $(CURDIR)/debian/baux/usr/share/baux
-	mkdir -p $(CURDIR)/debian/baux/usr/share/tmux-plugins
+	set -x  # Log every command
+	echo "[RULES] Start install at $(date)"
 
-	# 1. Main binary
-	install -m 0755 core/baux $(CURDIR)/  $(CURDIR)/debian/baux/usr/bin/baux
+	mkdir -p $(CURDIR)/debian/baux/usr/bin && echo "[OK] Created usr/bin" || { echo "[ERROR] mkdir usr/bin failed"; exit 1; }
+	mkdir -p $(CURDIR)/debian/baux/usr/share/baux && echo "[OK] Created usr/share/baux" || { echo "[ERROR] mkdir usr/share/baux failed"; exit 1; }
+	mkdir -p $(CURDIR)/debian/baux/usr/share/tmux-plugins && echo "[OK] Created usr/share/tmux-plugins" || { echo "[ERROR] mkdir tmux-plugins failed"; exit 1; }
 
-	# 2. All data dirs — recursive copy
-	cp -r nvim demo docs forge legacy roxieos test core/tmux $(CURDIR)/debian/baux/usr/share/baux/
+	install -m 0755 core/baux $(CURDIR)/debian/baux/usr/bin/baux && echo "[OK] Installed baux binary" || { echo "[ERROR] install baux failed"; exit 1; }
 
-	# 3. tmux-resurrect + continuum (pre-installed for speed)
-	git clone -q https://github.com/tmux-plugins/tmux-resurrect $(CURDIR)/debian/baux/usr/share/tmux-plugins/resurrect || true
-	git clone -q https://github.com/tmux-plugins/tmux-continuum $(CURDIR)/debian/baux/usr/share/tmux-plugins/continuum || true
+	cp -a nvim demo docs forge legacy roxieos test core/tmux $(CURDIR)/debian/baux/usr/share/baux/ && echo "[OK] Copied data dirs" || { echo "[ERROR] cp data dirs failed"; exit 1; }
+
+	cp -a core/tmux/plugins/resurrect $(CURDIR)/debian/baux/usr/share/tmux-plugins/ && echo "[OK] Copied resurrect plugin" || { echo "[ERROR] cp resurrect failed"; exit 1; }
+	cp -a core/tmux/plugins/continuum $(CURDIR)/debian/baux/usr/share/tmux-plugins/ && echo "[OK] Copied continuum plugin" || { echo "[ERROR] cp continuum failed"; exit 1; }
+
+	echo "[RULES] Install complete at $(date)"

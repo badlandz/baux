@@ -1,0 +1,13 @@
+./core/baux
+./core/tmux/baux.conf
+./core/tmux/bling.conf
+./core/tmux/core.conf
+./nvim/init.lua
+./demo
+./docs
+./forge
+./legacy
+./roxieos
+./test
+./core/tmux/plugins/resurrect
+./core/tmux/plugins/continuum
