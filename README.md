@@ -95,5 +95,5 @@ Updated Reading List — Zero to RoxieOS (November 21 2025 edition)
 6. SeaweedFS FUSE for buffering – https://github.com/seaweedfs/seaweedfs/wiki/FUSE-Mount  
 7. SSHH for pane splitting – https://github.com/jan-warchol/sshh  
 8. PostgreSQL for pane state – https://www.postgresql.org/docs/current/sql-createtable.html  
-9. Debian Derivatives Guidelines – https://wiki.debian.org/Derivatives/Guidelines  
-10. live-build manual – https://live-team.pages.debian.net/live-manual/
+9. BONUS: Debian Derivatives Guidelines – https://wiki.debian.org/Derivatives/Guidelines  
+10. BONUS: live-build manual – https://live-team.pages.debian.net/live-manual/
