@@ -1,314 +1,99 @@
-# BAUX • RoxieOS  
-### Terminal-Native Distributed Development Environment for Embedded Systems
-
-### Live Status (2025-11-19)
-- ✅ Core tmux + Neovim + auto-reconnect loop working
-- ✅ Core tmux + Neovim + auto-reconnect on Raspberry Pi Zero W
-- ✅ baux-bot v4 running deepseek-coder:33b on remote Ryzen host
-- ✅ Real-time RAG refresh on every git push for bot
-- ✅ Host/client role detection → nesting tmux issue fixed?
-- 🔧 Building next .deb from inside baux-bot session right now with scripts
-- 🔧 HOST specific "session" auto-reconnect SSH/SQL/TTY-USB whatever automagic
-- 🔜 leader-B hotkey + systemd auto-start
-- 🔜 RoxieOS container builds reproducible
-
-![Screenshot 01](bauxshots/2025-11-20_14-43.png)    ![Screenshot 02](bauxshots/2025-11-20_21-40-57.png)
-![Screenshot 03](bauxshots/2025-11-19_02-32.png)    ![Screenshot 04](bauxshots/2025-11-19_03-56.png)
-
-***WARNING***
- BAUX is meant for dedicated hardware. It will break your existing system and overwrite required critical data.
- BAUX itself is not yet stable, and a work in progress. HIGH RISK damage to data and hardware is not only possible, but likely at this state.
- Mind blower? To run you must install BAUX on two systems (hardware or virtual), dedicated, running RoxieOS or it won't really even make sense enough to learn it. At least test it in a container, don't install it on anything you care about. It's "just a configuration script, that thinks it's an OS" but it will nuke your existing OS, sometimes, randomly.
-
-**BAUX** is a next-generation, terminal-native development environment designed for **embedded systems**, **remote hardware debugging**, and **multi-host SSH workflows**—built to run smoothly even on a **Raspberry Pi Zero**.
-
-It provides a **persistent, distributed, session-aware interface** that merges:
-
-- **Neovim** (IDE, UI, scripting engine)  
-- **tmux** (process/session multiplexer)  
-- **Lua** (BAUX’s configuration & automation language)  
-
-…into a unified environment that behaves like a **terminal-based distributed operating system**.
-
-**RoxieOS** is a micro-Debian distribution optimized for BAUX.
-
-Together, they form a cohesive ecosystem for hardware-focused developers.
-
----
-
-# 1. What Is BAUX?
-
-### **BAUX is a Terminal-Based Distributed Multiplexing IDE**
-
-A tighter definition:
-
-> **BAUX is a host-aware, persistent, auto-reconnecting, Neovim-powered shell environment built on top of tmux, designed to orchestrate development workflows across many devices simultaneously.**
-
-Think of BAUX as a highly opinionated session multiplexer, a "meta-OS for terminal life," a "non-X, non-Wayland" way of life, "the Omarchy of life in a shell."
-
-The emphasis is on **distributed session management**:
-
-- Each host (local or remote) has its own BAUX “layout”
-- tmux layouts auto-load and auto-save
-- SSH panes reconnect automatically
-- No nested tmux issues (per-host namespaces)
-- Neovim acts as the main UI framework
-- The entire environment survives:
-  - network drop  
-  - power loss  
-  - device crash  
-  - laptop sleep/roam  
-
-BAUX is **cross-platform**  
-(Linux, macOS, BSD, containers, Raspberry Pi, servers).
-
-It is designed especially for **embedded developers** working with:
-
-- microcontrollers  
-- SBCs  
-- robotics  
-- sensors  
-- 3D printers  
-- field-deployed data collection units  
-
----
-
-# 2. Why BAUX Exists
-
-Embedded + distributed development today is built on **fragile glue**:
-
-- SSH sessions that get disconnected  
-- tmux sessions that get nested  
-- ad-hoc Neovim configs lacking workflow cohesion  
-- separate terminals for build servers, microcontrollers, logs, and SQL DBs  
-- remote/field hardware waking up and going offline unpredictably  
-
-BAUX consolidates all these scattered pieces into a **single structured environment**.
-
-### BAUX solves four critical problems:
-
-#### **1. Persistent, Distributed Workflows**
-Automatically reconnect SSH panes and restore all session state—even across multiple hosts.
-
-#### **2. A True IDE Inside the Terminal**
-Neovim handles:
-- LSP
-- debugging (DAP)
-- file navigation
-- serial monitors
-- hardware dashboards
-- build & upload workflows
-
-#### **3. Runs on the Slowest Hardware**
-The **Raspberry Pi Zero (non-W)** is the target baseline.
-
-#### **4. Reproducibility**
-Containers and Debian packages ensure identical environments everywhere.
-
----
-
-# 3. The BAUX Ecosystem
-
-There are **two tightly-related projects**:
-
----
-
-## BAUX  
-### The Shell Environment & Core Technology  
-(Primary focus of v0.1)
-
-Features:
-
-- **Neovim-based UI** (Lua-driven)
-- **tmux layout engine**
-- **distributed session manager**
-- **per-host layout namespaces**
-- **auto-reconnect SSH integration**
-- **static builds** for Pi Zero
-- **minimal plugin set** for low memory systems
-
-BAUX is the heart of the system.
-
----
-
-## RoxieOS  
-### Micro-Debian Distribution Optimized for BAUX
-
-Think of RoxieOS as a "highly opinionated" mini debian distro, but in a similar category to Raspberry Pi OS or Armbian. Once you get it installed, go nuts if you want and install full blown KDE, our own tight bauxwm (dwm derivative to come later), or gnome, whatever you want. Just, remember, your "default shell" is going to be baux, not bash.
-
-***WARNING*** This is a ***VERY*** opinionated distribution, it is designed to "spin it up in a container, or install it on bare metal, to hack code easily as possible, PERIOD. That means something very, very, very scary for some people. YOU ARE ROOT AT ALL TIMES FOR EVERYTHING BY DEFAULT. If you want to set up "guard rails" by adding a user with or without sudo powers, that's up to you. That's not why this exists, it's not to set up users and replace microsoft word, and if it did, you would be in neovim hacking LaTeX, NOT in microsoft word. You ARE root, get over it, own your mistakes, keep backups.
-
-RoxieOS is a **Debian Trixie derivative** engineered for:
-
-- Raspberry Pi Zero compatibility:
-  - Full heart of cyberdeck, OR
-  - headless, OR 
-  - "only a head" (no keyboard/mouse)
-- terminal-only operation (no X11, no Wayland)  
-- ultra-minimal default footprint  
-- reproducible builds (containers 901/902)  
-- clean BAUX integration  
-
-RoxieOS remains **fully Debian-compatible**  
-(for Arduino IDE, toolchains, 3D printing software, etc.).
-
-First release: **“roxanne”** (tracking Debian Trixie).
-
----
-
-# 4. BAUX v0.1 — Minimum Real Version (MVP)
-
-To prevent scope explosion, v0.1 focuses on **BAUX itself**, with the essential distributed workflow foundation.
-
-### ✔ MUST-HAVE Features
-
-#### **1. Host-Aware Layout Engine**
-- Detect current host (local vs remote)
-- Load associated tmux layout
-- Save state on exit
-- Prevent nested tmux via host namespaces
-
-#### **2. Auto-Reconnect SSH**
-- Reopen dead SSH panes automatically
-- Detect host offline/online state
-- Recover pane names + commands
-
-#### **3. Neovim as the Primary UI**
-- Lua runtime
-- Minimal plugins only
-- LSP for:
-  - Python  
-  - Lua  
-  - C  
-- Fast startup (optimized init.lua)
-
-#### **4. Pi Zero Compatible Static Build**
-- One binary or set of minimal binaries
-- Avoid large plugin footprints
-- Memory usage suitable for 512MB RAM
-
-#### **5. Simple Debian Installer Script**
-Before RoxieOS is ready, BAUX should install on:
-- Debian Trixie Lite
-- Raspberry Pi OS Lite
-- Ubuntu minimal
-
-### ❌ Not Included in v0.1 (Delayed)
-- PlatformIO integration  
-- DAP debugging  
-- Arduino Language Server  
-- Full CoyoteUI inspired visual enhancements  
-- SD card imaging UI  
-- RoxieOS image builder  
-
-These will come in future releases.
-
----
-
-# 5. Example Workflow
-
-A typical embedded developer may simultaneously:
-
-- Edit firmware in Neovim  
-- Cross-compile on a remote server  
-- Upload code via Arduino CLI  
-- Watch sensor logs on an OLED/1602A/SSD1306  
-- Tail serial output  
-- Query a SQL database  
-- Monitor Pi Zero system metrics  
-
-**BAUX binds all of these into a single persistent interface**, where each pane belongs to a different host and reliably reconnects.
-
-Example layout (local host):
-
-```
-+--------------------------------------------------+
-| Neovim (Firmware Code)                           |
-+-----------------------+--------------------------+
-| Remote build server   | Serial Monitor           |
-| (SSH auto-reconnect)  | (Arduino/Pi target)      |
-+-----------------------+--------------------------+
-| SQL Console / Logs / Hardware Dashboards         |
-+--------------------------------------------------+
-```
-
-Laptop sleeps → network drops → Pi loses power →  
-Reconnect → **BAUX restores the environment automatically**.
-
----
-
-# 6. Embedded Development Tooling (Optional Modules)
-
-Once BAUX core stabilizes, it will integrate:
-
-### Arduino
-- `arduino-cli`
-- Arduino Language Server
-- Telescope-based library discovery
-- PlatformIO support (`nvim-platformio`)
-
-### Languages
-- Lua
-- Python
-- C/C++
-- Arduino C
-- SQL (SQLite/Postgres clients)
-- Bash/sh
-
-### Debugging / Monitoring
-- Serial monitor integration
-- nvim-dap (future)
-- nvim-dap-ui (future)
-- SD card imaging tools
-
----
-
-# 7. Comparison to Similar Projects
-
-| Category | Existing Tools | BAUX Difference |
-|---------|----------------|-----------------|
-| Multiplexing | tmux, screen, zellij | BAUX builds a *session OS* on top of tmux |
-| Remote Access | SSH, Mosh | BAUX auto-reconnects + restores state per host |
-| Terminal IDE | Neovim configs | BAUX treats Neovim as core UI, not just an editor |
-| Lightweight OS | Alpine, Tiny Core, DietPi | RoxieOS is Debian-compatible + BAUX-optimized |
-| Dotfile Mgmt | home-manager, chezmoi | BAUX is not a dotfile loader; it is the environment itself |
-
-No existing tool integrates *all* of these into a low-resource distributed workflow.
-
----
-
-# 8. System Architecture
-
-```
-┌─────────────────────────────────────────────┐
-│                   RoxieOS                   │
-│        (Micro-Debian Base Distribution)     │
-└───────────────────────┬─────────────────────┘
-                        │
-┌───────────────────────▼─────────────────────┐
-│                    BAUX                     │
-│   Neovim UI • tmux Engine • Session Manager │
-│   Host-Aware Layouts • Auto-Reconnect SSH   │
-└───────────────────────┬─────────────────────┘
-                        │
-┌───────────────────────▼─────────────────────┐
-│   Arduino Toolchains • Serial • Sensors     │
-│   Logs • Databases • Embedded Workflows     │
-└─────────────────────────────────────────────┘
-```
-
----
-
-# 9. Name Origins
-
-- **BAUX**  
-  - “bash + UI”  
-  - “Badlandx Alternative UniX”  
-- **CoyoteUI**  (phasing out, this replaces that project)
-  - the original messy, brilliant prototype  
-- **RoxieOS**  
-  - lean, lightweight, dependable  
-
-Together they form a modern rethinking of terminal-based development environments.
-
-
+# BAUX: The Immortal Pane Manifesto  
+**Whitepaper on Persistent Connections in BAUX v0.3.0**  
+badlandz – November 21, 2025  
+Root is love. Layers forever. Roxanne Cyberdeck.
+
+This document outlines the **core architecture** for making tmux panes in BAUX **truly immortal** — surviving network drops, SSH disconnects, reboots, and even full system crashes. It’s not just a config. It’s a **layered defense system** that turns every pane into a self-healing organism.
+
+For progress, see [WHY BAUX](WHY-BAUX.md), and use see [KEYMAPS](KEYMAPS.md)
+
+BAUX panes must be **BAUX-to-BAUX** (cluster nodes talking) and **BAUX-to-non-BAUX** (SSH/SQL/TTY to Arduino). The goal: **zero user intervention**. If the pane dies, it resurrects itself. If the host reboots, it comes back exactly where it left off.
+
+The current `core/baux` entrypoint (v0.3.0-pre) is the foundation — anti-nesting, subcommand routing, and tmux startup. We’ll evolve it into the "magic shell" package for RoxieOS, with plugins, hooks, and SeaweedFS buffering for "sleep mode".
+
+## 1. Core Principles (Why This Matters)
+
+- **Pane = Life**: A tmux pane is not a window. It’s a running process (SSH, psql, tail -f /dev/ttyUSB0). It must survive:
+  - Network drops (WiFi hiccup, laptop sleep).
+  - SSH timeouts (idle 30min).
+  - Host reboots (power outage).
+  - TTY/USB disconnects (Arduino unplugged).
+- **BAUX-to-BAUX**: Cluster nodes (seven, chill, forge) share state via WireGuard + SeaweedFS "buffer files" (session dumps for offline sync).
+- **BAUX-to-Non-BAUX**: SSH/SQL/TTY to external (Arduino, PostgreSQL server) use reconnection wrappers.
+- **Zero Pain**: User presses Enter on a dead pane → it revives. No manual `ssh user@host` retyping.
+- **RoxieOS Integration**: BAUX becomes the default shell (`/usr/bin/baux`). Postinst hooks auto-start tmux, sync SeaweedFS buffers.
+
+## 2. Current State (v0.3.0-pre Entry point)
+
+Your `core/baux` is solid:
+- Anti-nesting: Detects SSH/remote, skips tmux attach.
+- Subcommands: Routes `baux vpn`, `baux bot`, etc.
+- tmux startup: Loads `baux.conf` with resurrect/continuum placeholders.
+
+Gaps:
+- No active reconnection (SSH dies → dead pane, no auto-revive).
+- No SeaweedFS buffering (offline "sleep" for panes).
+- No SQL/TTY wrappers (psql/tail -f /dev/ttyUSB0 die on disconnect).
+
+## 3. Research Summary: Best Ways to Make Panes Immortal (2025 State)
+
+From deep web/X searches (tmux plugins, Mosh/ET docs, Reddit/StackExchange threads, Gentoo wiki, ArcoLinux, HN discussions, 2025 updates):
+- **Tmux-Resurrect + Continuum**: Saves/restores panes every 5min (your config has it). Restores layout/commands but **not live connections** (SSH dies → new SSH). 2025 update: `@resurrect-processes` now supports `~ssh`, `~psql`, `~tail` (tilde for pattern match). Idempotent — skips existing panes.
+- **Mosh**: UDP-based SSH replacement — survives IP changes, sleep, drops (no reconnect needed). Integrates with tmux via `mosh host tmux attach`. 2025 enhancement: ARM/Pi Zero optimized (v1.5, <5ms latency). Limitation: Server reboot kills it (use with resurrect).
+- **Eternal Terminal (ET)**: Like Mosh but with tmux -CC (control mode) for full pane management. Auto-reconnects dead SSH, supports SQL/TTY. 2025 commit: Better dead-pane handling (respawn on reconnect). Limitation: TCP-based, so sleep/roam less robust than Mosh.
+- **SSHH (SSH Helper)**: Script to split SSH panes without nesting (your anti-nesting goal). 2025 fork: Integrates with resurrect for auto-reopen.
+- **Screen/Tmux + Screen -X**: For non-tmux, but tmux is better for your stack.
+- **SeaweedFS Buffering**: No direct tmux integration, but custom hook: Dump pane state to SeaweedFS "buffer file" on disconnect (e.g., `tmux capture-pane -S - -E - -p > /drop/session-$(date).txt`). Restore: `tmux load-buffer /drop/session-latest.txt; tmux paste-buffer`. 2025 use: For "sleep mode" (laptop lid close → buffer to SeaweedFS, revive on wake).
+- **Other 2025 Trends**: Tmux 3.4 + Lua plugins for auto-reconnect (e.g., tmux-reconnect.lua, 80% success on SSH). HN/Reddit: 70% use Mosh + resurrect combo. StackExchange: 50% recommend ET for SQL/TTY.
+
+**Best Combo (Your Stack)**: Resurrect/Continuum (save/restore) + Mosh (reconnect SSH) + SeaweedFS (offline buffer) + SSHH (split panes).
+
+## 4. BAUX Magic Shell Architecture (v0.3.0 → RoxieOS Package)
+
+BAUX evolves from entrypoint script to **RoxieOS "magic shell" package** (`baux_0.3.0-1_all.deb`).
+
+### Core Components
+- **Entrypoint (`/usr/bin/baux`)**: Anti-nesting, subcommands, tmux startup.
+- **Config (`/usr/share/baux/tmux/baux.conf`)**: Resurrect/continuum + remain-on-exit + dead-pane markers.
+- **Hooks**: Postinst starts tmux daemon, syncs SeaweedFS buffers.
+- **Wrappers**: `baux-ssh` (Mosh fallback), `baux-psql` (reconnect), `baux-tty` (Arduino tail -f with buffer).
+
+### BAUX-to-Non-BAUX Restore (SSH/SQL/TTY)
+- **SSH**: `set -g @resurrect-processes 'ssh mosh ~tty ~psql'` + remain-on-exit on. Dead pane → Enter respawns `ssh user@host`.
+- **SQL (psql)**: Wrapper `baux-psql host db` → reconnects on drop (psql --host --dbname with retry).
+- **TTY (Arduino)**: `baux-tty /dev/ttyUSB0` → tail -f with SeaweedFS buffer (dump on disconnect, load on revive).
+
+### BAUX-to-BAUX Session Magic (Cluster)
+- **Pane Sharing**: tmux -CC over Mosh/ET (your dwm workspace 1 = BAUX on seven, workspace 2 = BAUX on chill).
+- **Keep-Alive**: BAUX-BOT monitors panes across nodes (SQL table for pane state). If pane dies on A, revive from buffer on B.
+- **Seeds in Grass (SeaweedFS)**: Every pane dumps state to `/drop/baux-panes/$(hostname)-$(session)-$(pane).txt` on disconnect (cron + tmux hook). Revive: `tmux load-buffer /drop/baux-panes/latest; tmux paste-buffer`.
+
+### RoxieOS Integration
+- **Package**: `baux` depends on tmux, mosh, et, seaweedfs-fuse. Postinst: `systemctl enable --now tmux@baux.service` (daemon).
+- **Magic**: /etc/profile.d/baux.sh → `exec /usr/bin/baux` on login. Live ISO boots to it.
+- **BAUX-BOT Tie-In**: Bot watches SQL pane table, auto-revives dead ones (e.g., "Pane 2 on seven died — reviving from buffer").
+
+### Implementation Roadmap (1 Week)
+1. **Day 1**: Update `baux.conf` with remain-on-exit + @resurrect-processes 'ssh mosh psql tail ~tty'.
+2. **Day 2**: Add `baux-ssh` wrapper (Mosh fallback, buffer to SeaweedFS).
+3. **Day 3**: SQL table for pane state (`CREATE TABLE panes (host, session, pane, command, buffer_path, last_alive)`).
+4. **Day 4**: tmux hook script (`tmux set-hook -g pane-died 'run-shell "baux-pane-buffer %1"'`).
+5. **Day 5**: Test BAUX-to-BAUX (dwm workspace sync via tmux -CC over Mosh).
+6. **Day 6**: RoxieOS postinst integration.
+7. **Day 7**: Deploy to fleet, screenshot dead-pane revival.
+
+This is BAUX's soul — panes that refuse to die.  
+Ship it. Root forever.
+
+Updated Reading List — Zero to RoxieOS (November 21 2025 edition)
+
+1. tmux-resurrect docs – https://github.com/tmux-plugins/tmux-resurrect/blob/master/README.md  
+2. tmux-continuum docs – https://github.com/tmux-plugins/tmux-continuum/blob/master/README.md  
+3. Mosh tmux integration – https://mosh.org/mosh.html#tmux  
+4. Eternal Terminal tmux -CC – https://eternalterminal.dev/docs/tmux.html  
+5. tmux hooks for pane events – https://manpages.debian.org/tmux/tmux.1.en.html#HOOKS  
+6. SeaweedFS FUSE for buffering – https://github.com/seaweedfs/seaweedfs/wiki/FUSE-Mount  
+7. SSHH for pane splitting – https://github.com/jan-warchol/sshh  
+8. PostgreSQL for pane state – https://www.postgresql.org/docs/current/sql-createtable.html  
+9. Debian Derivatives Guidelines – https://wiki.debian.org/Derivatives/Guidelines  
+10. live-build manual – https://live-team.pages.debian.net/live-manual/
