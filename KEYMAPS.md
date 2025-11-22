@@ -1,5 +1,7 @@
 # The CoyoteUI Keymap Cheat Sheet
 
+*** CHANGES COMING ***
+
 This cheat sheet summarizes the **most common and most used** key bindings and aliases from the coyoteUI configurations, verified directly from the repository files:
 
 - **Bashrc**: `bashrc/MVtoDOTbashrc.txt` (aliases + vi-mode defaults)
